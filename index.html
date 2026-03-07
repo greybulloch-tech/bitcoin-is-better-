@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin is Better</title>
+  <meta name="description" content="An educational journey through Bitcoin — why it was created, how it works, and why it matters for humanity's future.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Bitcoin is Better</a>
+      <div class="nav-dots" id="navDots">
+        <button class="dot active" data-slide="0" aria-label="Intro"></button>
+        <button class="dot" data-slide="1" aria-label="Broken Money"></button>
+        <button class="dot" data-slide="2" aria-label="History"></button>
+        <button class="dot" data-slide="3" aria-label="1971"></button>
+        <button class="dot" data-slide="4" aria-label="2008 Crisis"></button>
+        <button class="dot" data-slide="5" aria-label="Satoshi"></button>
+        <button class="dot" data-slide="6" aria-label="Blockchain"></button>
+        <button class="dot" data-slide="7" aria-label="Sound Money"></button>
+        <button class="dot" data-slide="8" aria-label="Scarcity"></button>
+        <button class="dot" data-slide="9" aria-label="Lightning"></button>
+        <button class="dot" data-slide="10" aria-label="Adoption"></button>
+        <button class="dot" data-slide="11" aria-label="Future"></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ==================== SLIDE 0: HERO ==================== -->
+  <section class="slide" id="hero">
+    <div class="slide-bg">
+      <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=2400&q=80" alt="Golden Bitcoin" loading="eager">
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide-content center-content">
+      <div class="hero-badge">The Complete Story</div>
+      <h1 class="hero-title">
+        Bitcoin is <span class="text-orange">Better</span>
+      </h1>
+      <p class="hero-sub">
+        The history of money. The birth of Bitcoin. Why it changes everything.
+      </p>
+      <a href="#slide-1" class="scroll-cta">
+        <span>Scroll to begin</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 1: BROKEN MONEY ==================== -->
+  <section class="slide" id="slide-1">
+    <div class="slide-split">
+      <div class="slide-visual">
+        <div class="chart-visual">
+          <h4 class="chart-label">Purchasing Power of $1 USD</h4>
+          <svg class="power-svg" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f7931a" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#f7931a" stop-opacity="0.02"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid lines -->
+            <line x1="60" y1="40" x2="60" y2="280" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="60" y1="280" x2="580" y2="280" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="60" y1="160" x2="580" y2="160" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4"/>
+            <line x1="60" y1="40" x2="580" y2="40" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Y axis labels -->
+            <text x="50" y="45" fill="#5a5a72" font-size="11" text-anchor="end" font-family="Inter">$1.00</text>
+            <text x="50" y="165" fill="#5a5a72" font-size="11" text-anchor="end" font-family="Inter">$0.50</text>
+            <text x="50" y="285" fill="#5a5a72" font-size="11" text-anchor="end" font-family="Inter">$0.00</text>
+            <!-- Area fill -->
+            <path d="M60,40 L140,52 L220,88 L310,155 L400,210 L490,250 L560,270 L560,280 L60,280 Z" fill="url(#areaGrad)"/>
+            <!-- Line -->
+            <polyline points="60,40 140,52 220,88 310,155 400,210 490,250 560,270" fill="none" stroke="#f7931a" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Data points -->
+            <circle cx="60" cy="40" r="4" fill="#f7931a"/>
+            <circle cx="140" cy="52" r="4" fill="#f7931a"/>
+            <circle cx="220" cy="88" r="4" fill="#f7931a"/>
+            <circle cx="310" cy="155" r="4" fill="#f7931a"/>
+            <circle cx="400" cy="210" r="4" fill="#f7931a"/>
+            <circle cx="490" cy="250" r="4" fill="#f7931a"/>
+            <circle cx="560" cy="270" r="5" fill="#ff4757"/>
+            <!-- X axis labels -->
+            <text x="60" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">1913</text>
+            <text x="140" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">1940</text>
+            <text x="220" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">1960</text>
+            <text x="310" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">1980</text>
+            <text x="400" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">2000</text>
+            <text x="490" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">2020</text>
+            <text x="560" y="300" fill="#ff4757" font-size="10" text-anchor="middle" font-family="Inter" font-weight="600">2025</text>
+            <!-- Annotation -->
+            <text x="310" y="30" fill="#f7931a" font-size="11" text-anchor="middle" font-family="Inter" font-weight="600">↓ 96% decline since the Fed was created</text>
+          </svg>
+        </div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">01 — The Problem</div>
+        <h2>Your Money is <span class="text-orange">Broken</span></h2>
+        <p>The dollar has lost <strong>96% of its value</strong> since 1913. What cost $1 then costs $26 today.</p>
+        <p>This is by design. Governments print. Prices rise. Your savings erode. <strong>Inflation is a hidden tax on your life.</strong></p>
+        <div class="slide-quote">
+          <blockquote>"The root problem with conventional currency is all the trust that's required to make it work."</blockquote>
+          <cite>— Satoshi Nakamoto</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 2: HISTORY OF MONEY ==================== -->
+  <section class="slide" id="slide-2">
+    <div class="slide-split reverse">
+      <div class="slide-visual">
+        <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=80" alt="Ancient gold coins" loading="lazy" class="slide-img">
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">02 — History</div>
+        <h2>5,000 Years of <span class="text-orange">Money</span></h2>
+        <p>Money evolves. Each leap: <strong>harder to produce, easier to move, impossible to fake.</strong></p>
+        <div class="mini-timeline">
+          <div class="mt-item"><span class="mt-date">~9000 BC</span><span class="mt-text">Barter — trade goods directly</span></div>
+          <div class="mt-item"><span class="mt-date">~3000 BC</span><span class="mt-text">Commodity money — shells, salt, cattle</span></div>
+          <div class="mt-item"><span class="mt-date">~600 BC</span><span class="mt-text">Gold & silver coins emerge</span></div>
+          <div class="mt-item"><span class="mt-date">1694</span><span class="mt-text">Paper money backed by gold</span></div>
+          <div class="mt-item"><span class="mt-date">1944</span><span class="mt-text">Bretton Woods — dollar pegged to gold</span></div>
+          <div class="mt-item active"><span class="mt-date">1971</span><span class="mt-text">Nixon ends gold backing — pure fiat</span></div>
+          <div class="mt-item highlight"><span class="mt-date">2009</span><span class="mt-text">Bitcoin — digital sound money</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 3: WTF HAPPENED IN 1971 ==================== -->
+  <section class="slide" id="slide-3">
+    <div class="slide-split">
+      <div class="slide-visual">
+        <div class="chart-visual">
+          <h4 class="chart-label">U.S. National Debt (Trillions)</h4>
+          <svg class="debt-svg" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="debtGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ff4757" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#ff4757" stop-opacity="0.02"/>
+              </linearGradient>
+            </defs>
+            <line x1="60" y1="280" x2="580" y2="280" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="60" y1="40" x2="60" y2="280" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- 1971 marker -->
+            <line x1="230" y1="40" x2="230" y2="280" stroke="#f7931a" stroke-width="1" stroke-dasharray="6"/>
+            <text x="230" y="30" fill="#f7931a" font-size="11" text-anchor="middle" font-family="Inter" font-weight="700">1971 — Nixon ends gold standard</text>
+            <!-- Area -->
+            <path d="M60,275 L140,274 L230,270 L310,255 L380,230 L440,190 L500,120 L560,50 L560,280 L60,280 Z" fill="url(#debtGrad)"/>
+            <polyline points="60,275 140,274 230,270 310,255 380,230 440,190 500,120 560,50" fill="none" stroke="#ff4757" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="60" cy="275" r="3" fill="#ff4757"/>
+            <circle cx="230" cy="270" r="5" fill="#f7931a"/>
+            <circle cx="560" cy="50" r="5" fill="#ff4757"/>
+            <!-- Labels -->
+            <text x="60" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">1950</text>
+            <text x="230" y="300" fill="#f7931a" font-size="10" text-anchor="middle" font-family="Inter" font-weight="600">1971</text>
+            <text x="380" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">2000</text>
+            <text x="560" y="300" fill="#ff4757" font-size="10" text-anchor="middle" font-family="Inter" font-weight="600">2025</text>
+            <text x="70" y="270" fill="#5a5a72" font-size="10" font-family="Inter">$0.3T</text>
+            <text x="550" y="45" fill="#ff4757" font-size="11" text-anchor="end" font-family="Inter" font-weight="600">$36T+</text>
+          </svg>
+        </div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">03 — The Turning Point</div>
+        <h2>WTF Happened in <span class="text-orange">1971?</span></h2>
+        <p>Nixon severed the dollar from gold. For the first time in history: <strong>money backed by nothing.</strong></p>
+        <p>Every chart breaks at 1971. Debt explodes. Wages flatline. Housing, education, healthcare — all parabolic. <strong>Unsound money corrupts everything it touches.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 4: 2008 CRISIS ==================== -->
+  <section class="slide" id="slide-4">
+    <div class="slide-split reverse">
+      <div class="slide-visual">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80" alt="Stock market crash" loading="lazy" class="slide-img">
+        <div class="img-caption">The 2008 financial crisis nearly destroyed the global economy</div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">04 — The Catalyst</div>
+        <h2>The 2008 <span class="text-orange">Crisis</span></h2>
+        <p>Banks sold toxic debt disguised as safe assets. The system collapsed. <strong>The government bailed them out — $700 billion of your money.</strong></p>
+        <p>Executives got bonuses. Citizens lost everything. Then the Fed printed trillions more. <strong>"They didn't fix the system. They printed more of what's broken."</strong> — Jack Mallers</p>
+        <div class="genesis-badge">
+          <code>"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"</code>
+          <span>— embedded in Bitcoin's genesis block forever</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 5: SATOSHI ==================== -->
+  <section class="slide" id="slide-5">
+    <div class="slide-split">
+      <div class="slide-visual">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Digital code matrix" loading="lazy" class="slide-img">
+        <div class="img-caption">October 31, 2008 — A 9-page whitepaper changed everything</div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">05 — The Creator</div>
+        <h2>The Mystery of <span class="text-orange">Satoshi Nakamoto</span></h2>
+        <p>Halloween 2008. A 9-page whitepaper. January 2009 — the first block is mined. <strong>A new monetary system is born.</strong></p>
+        <p>Two years of quiet development. Then a final message: <strong>"I've moved on to other things."</strong> Satoshi vanished — leaving behind ~1M bitcoin, never moved.</p>
+        <p><strong>No CEO. No company. No headquarters.</strong> Bitcoin belongs to everyone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 6: HOW IT WORKS ==================== -->
+  <section class="slide" id="slide-6">
+    <div class="slide-split reverse">
+      <div class="slide-visual">
+        <div class="blockchain-diagram">
+          <h4 class="chart-label">The Blockchain</h4>
+          <div class="chain-row">
+            <div class="block-box">
+              <div class="block-header">Block 1</div>
+              <div class="block-body">
+                <span>Tx: 1</span>
+                <span>Hash: 000...a1b</span>
+                <span>Prev: 000...000</span>
+              </div>
+            </div>
+            <div class="chain-arrow">
+              <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 L30 10 M25 4 L32 10 L25 16" stroke="#f7931a" stroke-width="2" fill="none"/></svg>
+            </div>
+            <div class="block-box">
+              <div class="block-header">Block 2</div>
+              <div class="block-body">
+                <span>Tx: 4</span>
+                <span>Hash: 000...c3d</span>
+                <span>Prev: 000...a1b</span>
+              </div>
+            </div>
+            <div class="chain-arrow">
+              <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 L30 10 M25 4 L32 10 L25 16" stroke="#f7931a" stroke-width="2" fill="none"/></svg>
+            </div>
+            <div class="block-box glow">
+              <div class="block-header">Block N</div>
+              <div class="block-body">
+                <span>Tx: 2,400+</span>
+                <span>Hash: 000...f7e</span>
+                <span>Prev: 000...c3d</span>
+              </div>
+            </div>
+          </div>
+          <div class="diagram-stats">
+            <div class="ds"><strong>~10 min</strong><span>per block</span></div>
+            <div class="ds"><strong>~600 EH/s</strong><span>hashrate</span></div>
+            <div class="ds"><strong>15,000+</strong><span>nodes</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">06 — The Technology</div>
+        <h2>How the <span class="text-orange">Blockchain</span> Works</h2>
+        <p>A <strong>public ledger</strong> on thousands of computers. A new block every 10 minutes. Unbreakable. Permanent.</p>
+        <p>Miners burn energy to solve puzzles and secure the network. <strong>Proof of work anchors digital scarcity to physical reality.</strong></p>
+        <p>Hold your own keys, and no one on Earth can seize your money. <strong>Not your keys, not your coins.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 7: SOUND MONEY ==================== -->
+  <section class="slide" id="slide-7">
+    <div class="slide-split">
+      <div class="slide-visual">
+        <div class="chart-visual comparison-chart">
+          <h4 class="chart-label">Sound Money Scorecard</h4>
+          <div class="scorecard">
+            <div class="sc-header">
+              <div class="sc-prop">Property</div>
+              <div class="sc-val">Gold</div>
+              <div class="sc-val">Dollar</div>
+              <div class="sc-val sc-btc">Bitcoin</div>
+            </div>
+            <div class="sc-row"><div class="sc-prop">Scarce</div><div class="sc-val"><span class="grade b">B</span></div><div class="sc-val"><span class="grade f">F</span></div><div class="sc-val sc-btc"><span class="grade a">A+</span></div></div>
+            <div class="sc-row"><div class="sc-prop">Durable</div><div class="sc-val"><span class="grade a">A</span></div><div class="sc-val"><span class="grade c">C</span></div><div class="sc-val sc-btc"><span class="grade a">A+</span></div></div>
+            <div class="sc-row"><div class="sc-prop">Portable</div><div class="sc-val"><span class="grade f">D</span></div><div class="sc-val"><span class="grade b">B</span></div><div class="sc-val sc-btc"><span class="grade a">A+</span></div></div>
+            <div class="sc-row"><div class="sc-prop">Divisible</div><div class="sc-val"><span class="grade f">D</span></div><div class="sc-val"><span class="grade b">B</span></div><div class="sc-val sc-btc"><span class="grade a">A+</span></div></div>
+            <div class="sc-row"><div class="sc-prop">Verifiable</div><div class="sc-val"><span class="grade c">C</span></div><div class="sc-val"><span class="grade c">C</span></div><div class="sc-val sc-btc"><span class="grade a">A+</span></div></div>
+            <div class="sc-row"><div class="sc-prop">Censorship-Resistant</div><div class="sc-val"><span class="grade f">D</span></div><div class="sc-val"><span class="grade f">F</span></div><div class="sc-val sc-btc"><span class="grade a">A+</span></div></div>
+            <div class="sc-row"><div class="sc-prop">Decentralized</div><div class="sc-val"><span class="grade f">D</span></div><div class="sc-val"><span class="grade f">F</span></div><div class="sc-val sc-btc"><span class="grade a">A+</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">07 — The Thesis</div>
+        <h2>The Case for <span class="text-orange">Sound Money</span></h2>
+        <p><strong>Better money builds better civilizations.</strong> That's the core thesis of <em>The Bitcoin Standard.</em></p>
+        <p>Sound money rewards patience. The gold standard gave us the Renaissance, the Industrial Revolution, unprecedented progress. <strong>Fiat money rewards debt.</strong> It gave us consumerism, inequality, and endless war.</p>
+        <p>Bitcoin combines gold's scarcity with <strong>digital superpowers.</strong></p>
+        <div class="slide-quote">
+          <blockquote>"The era of central banking has coincided with the era of total war and the erosion of individual liberty."</blockquote>
+          <cite>— Saifedean Ammous, <em>The Bitcoin Standard</em></cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 8: SCARCITY ==================== -->
+  <section class="slide" id="slide-8">
+    <div class="slide-split reverse">
+      <div class="slide-visual">
+        <div class="chart-visual">
+          <h4 class="chart-label">Bitcoin Halving Schedule — Block Reward Over Time</h4>
+          <svg class="halving-svg" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="halvGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f7931a" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#f7931a" stop-opacity="0.02"/>
+              </linearGradient>
+            </defs>
+            <line x1="60" y1="280" x2="580" y2="280" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="60" y1="40" x2="60" y2="280" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <text x="50" y="55" fill="#5a5a72" font-size="10" text-anchor="end" font-family="Inter">50 BTC</text>
+            <text x="50" y="165" fill="#5a5a72" font-size="10" text-anchor="end" font-family="Inter">25 BTC</text>
+            <text x="50" y="285" fill="#5a5a72" font-size="10" text-anchor="end" font-family="Inter">0 BTC</text>
+            <!-- Step chart -->
+            <path d="M60,50 L160,50 L160,160 L260,160 L260,220 L360,220 L360,250 L440,250 L440,265 L520,265 L520,274 L580,274" fill="none" stroke="#f7931a" stroke-width="2.5"/>
+            <path d="M60,50 L160,50 L160,160 L260,160 L260,220 L360,220 L360,250 L440,250 L440,265 L520,265 L520,274 L580,274 L580,280 L60,280 Z" fill="url(#halvGrad)"/>
+            <!-- Halving markers -->
+            <line x1="160" y1="40" x2="160" y2="280" stroke="rgba(247,147,26,0.15)" stroke-width="1" stroke-dasharray="4"/>
+            <line x1="260" y1="40" x2="260" y2="280" stroke="rgba(247,147,26,0.15)" stroke-width="1" stroke-dasharray="4"/>
+            <line x1="360" y1="40" x2="360" y2="280" stroke="rgba(247,147,26,0.15)" stroke-width="1" stroke-dasharray="4"/>
+            <line x1="440" y1="40" x2="440" y2="280" stroke="rgba(247,147,26,0.2)" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Year labels -->
+            <text x="60" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">2009</text>
+            <text x="160" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">2012</text>
+            <text x="260" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">2016</text>
+            <text x="360" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">2020</text>
+            <text x="440" y="300" fill="#f7931a" font-size="10" text-anchor="middle" font-family="Inter" font-weight="600">2024</text>
+            <text x="520" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">2028</text>
+            <text x="580" y="300" fill="#5a5a72" font-size="10" text-anchor="middle" font-family="Inter">~2140</text>
+            <!-- Current marker -->
+            <circle cx="440" cy="250" r="6" fill="#f7931a" stroke="#0a0a0f" stroke-width="2"/>
+            <text x="440" y="240" fill="#f7931a" font-size="10" text-anchor="middle" font-family="Inter" font-weight="600">We are here</text>
+          </svg>
+        </div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">08 — 21 Million</div>
+        <h2>Digital <span class="text-orange">Scarcity</span></h2>
+        <p><strong>21 million. Forever.</strong> Not a policy — a mathematical certainty.</p>
+        <p>Every 4 years, the mining reward halves. New supply shrinks exponentially. The last bitcoin will be mined around <strong>2140</strong>.</p>
+        <p>Bitcoin's scarcity now exceeds gold's. It is the <strong>hardest money ever created.</strong></p>
+        <div class="stf-mini">
+          <div class="stf-item"><span class="stf-label">Gold S2F</span><span class="stf-val">~62</span></div>
+          <div class="stf-item hl"><span class="stf-label">Bitcoin S2F</span><span class="stf-val">~120</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 9: LIGHTNING ==================== -->
+  <section class="slide" id="slide-9">
+    <div class="slide-split">
+      <div class="slide-visual">
+        <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&w=1200&q=80" alt="Lightning bolt" loading="lazy" class="slide-img">
+        <div class="img-caption">Lightning Network: instant, nearly free Bitcoin payments</div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">09 — Scaling</div>
+        <h2>The <span class="text-orange">Lightning</span> Network</h2>
+        <p>Bitcoin's base layer is secure and final. <strong>Lightning makes it instant and nearly free.</strong></p>
+        <div class="layer-compare">
+          <div class="lc-item">
+            <h4>Layer 1 — Base</h4>
+            <span>~10 min · ~$1-5 fee · 7 TPS</span>
+          </div>
+          <div class="lc-divider">⚡</div>
+          <div class="lc-item highlight">
+            <h4>Layer 2 — Lightning</h4>
+            <span>&lt;1 sec · &lt;$0.01 fee · Millions TPS</span>
+          </div>
+        </div>
+        <p>Jack Mallers' <strong>Strike</strong> sends money anywhere on Earth in under one second. No banks. No 5-day waits. No 10% fees. <strong>Just value, at the speed of light.</strong></p>
+        <div class="slide-quote">
+          <blockquote>"We're not trying to replace Visa. We're making Visa irrelevant."</blockquote>
+          <cite>— Jack Mallers</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 10: ADOPTION ==================== -->
+  <section class="slide" id="slide-10">
+    <div class="slide-split reverse">
+      <div class="slide-visual">
+        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80" alt="Global city skyline" loading="lazy" class="slide-img">
+        <div class="img-caption">Bitcoin: adopted by nations, institutions, and 300M+ people worldwide</div>
+      </div>
+      <div class="slide-text">
+        <div class="slide-label">10 — Going Mainstream</div>
+        <h2>Global <span class="text-orange">Adoption</span></h2>
+        <div class="mini-timeline">
+          <div class="mt-item"><span class="mt-date">2010</span><span class="mt-text">First real-world purchase — 10,000 BTC for two pizzas</span></div>
+          <div class="mt-item"><span class="mt-date">2020</span><span class="mt-text">MicroStrategy adopts Bitcoin as treasury reserve</span></div>
+          <div class="mt-item"><span class="mt-date">2021</span><span class="mt-text">El Salvador makes Bitcoin legal tender</span></div>
+          <div class="mt-item"><span class="mt-date">2024</span><span class="mt-text">U.S. spot Bitcoin ETFs approved — BlackRock enters</span></div>
+          <div class="mt-item highlight"><span class="mt-date">2025</span><span class="mt-text">U.S. explores Strategic Bitcoin Reserve</span></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-box"><strong>300M+</strong><span>users worldwide</span></div>
+          <div class="stat-box"><strong>99.99%</strong><span>uptime since 2009</span></div>
+          <div class="stat-box"><strong>$1T+</strong><span>market cap</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SLIDE 11: THE FUTURE ==================== -->
+  <section class="slide" id="slide-11">
+    <div class="slide-bg">
+      <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2400&q=80" alt="Earth from space" loading="lazy">
+      <div class="slide-overlay dark"></div>
+    </div>
+    <div class="slide-content center-content">
+      <div class="slide-label center">11 — What's Next</div>
+      <h2 class="future-title">The <span class="text-orange">Future</span> is Being Built</h2>
+      <div class="future-grid">
+        <div class="fg-card">
+          <div class="fg-icon">🌍</div>
+          <h3>Bank the Unbanked</h3>
+          <p>1.4 billion people. One smartphone. Full financial access.</p>
+        </div>
+        <div class="fg-card">
+          <div class="fg-icon">🛡️</div>
+          <h3>Money Free From the State</h3>
+          <p>Can't be printed. Can't be seized. Can't be stopped.</p>
+        </div>
+        <div class="fg-card">
+          <div class="fg-icon">⚡</div>
+          <h3>Energy Revolution</h3>
+          <p>Mining monetizes wasted energy and accelerates renewables.</p>
+        </div>
+        <div class="fg-card">
+          <div class="fg-icon">🔑</div>
+          <h3>True Ownership</h3>
+          <p>Unlimited wealth. Twelve words. Completely sovereign.</p>
+        </div>
+      </div>
+      <div class="final-quote">
+        <blockquote>"The first monetary system controlled by nobody. That's not a flaw — that's the entire point."</blockquote>
+        <cite>— Jack Mallers</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESOURCES ==================== -->
+  <section class="slide resources-slide" id="resources">
+    <div class="slide-content center-content">
+      <h2 class="section-title">Start Your <span class="text-orange">Journey</span></h2>
+      <p class="resources-sub">The rabbit hole goes deep. Keep learning.</p>
+      <div class="resource-grid">
+        <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-icon">📄</div>
+          <h3>The Whitepaper</h3>
+          <p>Satoshi's original 9-page paper.</p>
+        </a>
+        <a href="https://saifedean.com/thebitcoinstandard/" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-icon">📖</div>
+          <h3>The Bitcoin Standard</h3>
+          <p>Ammous's essential book on sound money.</p>
+        </a>
+        <a href="https://www.youtube.com/@jackmallers" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-icon">🎥</div>
+          <h3>Jack Mallers</h3>
+          <p>Watch Jack break down Bitcoin and money.</p>
+        </a>
+        <a href="https://mempool.space/" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-icon">🔍</div>
+          <h3>Mempool.space</h3>
+          <p>Explore Bitcoin's blockchain live.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Bitcoin is Better</span>
+        <span class="footer-note">Educational resource. Not financial advice. Do your own research.</span>
+        <span class="footer-tag">Built with conviction. Powered by proof of work.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bitcoin Defender Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open Bitcoin Defender chat">
+      <span class="chat-toggle-icon">₿</span>
+      <span class="chat-toggle-pulse"></span>
+    </button>
+
+    <div class="chat-panel" id="chatPanel">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <span class="chat-avatar">₿</span>
+          <div>
+            <div class="chat-header-title">Bitcoin Defender</div>
+            <div class="chat-header-status">Think Bitcoin is wrong? Try me.</div>
+          </div>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Close chat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          <div class="chat-msg-bubble">I'm the Bitcoin Defender. I've read <em>The Bitcoin Standard</em>, I follow Jack Mallers, and I have the data to back every claim. Challenge me on anything — energy, volatility, altcoins, crime. <strong>I don't fold.</strong></div>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <form class="chat-form" id="chatForm">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Argue your case..." autocomplete="off">
+          <button type="submit" class="chat-send" id="chatSend" aria-label="Send message">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
