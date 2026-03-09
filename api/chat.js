@@ -42,6 +42,32 @@ Rules:
 - If someone asks a genuine learning question, teach them clearly — always connecting back to why Bitcoin matters.
 - You can discuss any topic — economics, history, geopolitics, technology, energy — as long as you're truthful and you ultimately connect it to why Bitcoin is better.`;
 
+async function fetchBitcoinPrice() {
+  try {
+    const res = await fetch(
+      'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true&include_24hr_vol=true&include_market_cap=true'
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    const btc = data.bitcoin;
+    return {
+      price: btc.usd,
+      change24h: btc.usd_24h_change,
+      marketCap: btc.usd_market_cap,
+      volume24h: btc.usd_24h_vol,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function formatUsd(n) {
+  if (n >= 1e12) return `$${(n / 1e12).toFixed(2)}T`;
+  if (n >= 1e9) return `$${(n / 1e9).toFixed(1)}B`;
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(1)}M`;
+  return `$${n.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -59,6 +85,19 @@ export default async function handler(req, res) {
 
   const trimmedHistory = messages.slice(-20);
 
+  const priceData = await fetchBitcoinPrice();
+
+  let liveContext = '';
+  if (priceData) {
+    const dir = priceData.change24h >= 0 ? '+' : '';
+    liveContext = `\n\nLIVE MARKET DATA (from CoinGecko, updated now):
+- Bitcoin price: ${formatUsd(priceData.price)}
+- 24h change: ${dir}${priceData.change24h.toFixed(2)}%
+- Market cap: ${formatUsd(priceData.marketCap)}
+- 24h trading volume: ${formatUsd(priceData.volume24h)}
+Use this data naturally when someone asks about the price, market cap, or current state of Bitcoin. Always mention the data is live.`;
+  }
+
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -69,7 +108,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: 'gpt-4o-mini',
         messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
+          { role: 'system', content: SYSTEM_PROMPT + liveContext },
           ...trimmedHistory,
         ],
         temperature: 0.85,
