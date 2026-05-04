@@ -250,7 +250,7 @@
     },
     {
       id: 'adoption',
-      triggers: ['adopt', 'country', 'el salvador', 'legal tender', 'etf', 'blackrock', 'institution', 'microstrategy', 'strategy', 'saylor', 'mainstream', 'who uses', 'growing'],
+      triggers: ['adopt', 'country', 'countries', 'el salvador', 'legal tender', 'etf', 'blackrock', 'institution', 'microstrategy', 'strategy', 'saylor', 'mainstream', 'who uses', 'growing', 'nation'],
       answer: 'Bitcoin adoption is accelerating across individuals, corporations, and nation-states.',
       stats: 'Key milestones: **2010** — first real purchase (10,000 BTC for two pizzas). **2020** — MicroStrategy (now Strategy) begins buying, now holds **499,000+ BTC**. **2021** — El Salvador becomes the first country to adopt Bitcoin as **legal tender**. **January 2024** — U.S. approves **spot Bitcoin ETFs**; BlackRock\'s IBIT becomes the fastest ETF to $10B in history. **2025** — the U.S. explores a **Strategic Bitcoin Reserve**. Over **200 million people** worldwide have interacted with Bitcoin.',
       btc_case: 'Nation-state game theory is now in play: once one major country holds Bitcoin, **others can\'t afford not to**. We\'re watching the early stages of a global monetary shift.'
@@ -278,6 +278,13 @@
     }
   ];
 
+  const STOP_WORDS = new Set([
+    'bitcoin', 'btc', 'what', 'how', 'why', 'the', 'is', 'are', 'was',
+    'does', 'did', 'can', 'about', 'tell', 'for', 'and', 'that', 'this',
+    'with', 'not', 'you', 'your', 'has', 'have', 'too', 'its', 'it',
+    'from', 'been', 'will', 'than', 'who', 'all', 'made', 'other'
+  ]);
+
   function getFallbackResponse(userText) {
     const q = userText.toLowerCase();
 
@@ -285,11 +292,14 @@
       let score = 0;
       for (const trigger of topic.triggers) {
         if (q.includes(trigger)) {
-          score += trigger.split(' ').length * 2;
-        }
-        const words = trigger.split(' ');
-        for (const w of words) {
-          if (w.length > 2 && q.includes(w)) score += 1;
+          score += trigger.split(' ').length * 3;
+        } else {
+          const words = trigger.split(' ');
+          for (const w of words) {
+            if (w.length > 3 && !STOP_WORDS.has(w) && q.includes(w)) {
+              score += 1;
+            }
+          }
         }
       }
       return { topic, score };
@@ -300,14 +310,14 @@
     const best = scored[0];
     const second = scored[1];
 
-    if (best.score === 0) {
+    if (best.score < 2) {
       const pick = knowledge[Math.floor(Math.random() * knowledge.length)];
       return "Great question. Here's what you should know:\n\n" + pick.answer + '\n\n' + pick.stats + '\n\n' + pick.btc_case;
     }
 
     let response = best.topic.answer + '\n\n' + best.topic.stats;
 
-    if (second && second.score > 0 && second.topic.id !== best.topic.id) {
+    if (second && second.score >= 2 && second.topic.id !== best.topic.id) {
       response += '\n\n' + second.topic.btc_case;
     } else {
       response += '\n\n' + best.topic.btc_case;

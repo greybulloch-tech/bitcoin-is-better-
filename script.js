@@ -28,9 +28,10 @@
       if (entry.isIntersecting) {
         const children = entry.target.querySelectorAll(
           '.slide-label, h2, p, .slide-quote, .mini-timeline, .genesis-badge, ' +
-          '.chart-visual, .blockchain-diagram, .slide-img, .img-caption, ' +
+          '.slide-accent, .chart-visual, .blockchain-diagram, ' +
           '.layer-compare, .stat-row, .stf-mini, .comparison-chart, ' +
-          '.future-grid, .final-quote, .resource-grid, .fg-card, .resource-card'
+          '.future-grid, .final-quote, .resource-grid, .fg-card, .resource-card, ' +
+          '.wtf-charts-grid, .wtf-attribution'
         );
         children.forEach((child, i) => {
           child.classList.add('fade-in');

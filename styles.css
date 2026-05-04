@@ -1,5 +1,5 @@
 /* ============================================
-   Bitcoin is Better — Slide-Based Styles
+   Bitcoin is Better — Presentation Style
    ============================================ */
 
 *, *::before, *::after {
@@ -14,10 +14,10 @@
   --bg-card: #111119;
   --bg-card-h: #18182a;
   --tx: #e6e6f0;
-  --tx2: #8e8ea6;
+  --tx2: #9e9eb8;
   --tx3: #55556a;
   --orange: #f7931a;
-  --orange-g: rgba(247, 147, 26, 0.12);
+  --orange-g: rgba(247, 147, 26, 0.10);
   --green: #00d395;
   --red: #ff4757;
   --border: rgba(255, 255, 255, 0.06);
@@ -36,7 +36,7 @@ body {
   font-family: var(--sans);
   background: var(--bg);
   color: var(--tx);
-  line-height: 1.7;
+  line-height: 1.75;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -53,12 +53,14 @@ a {
 }
 a:hover { color: #ffb74d; }
 
-/* --- Nav --- */
+/* ============================================
+   Navigation
+   ============================================ */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(8, 8, 14, 0.7);
+  background: rgba(8, 8, 14, 0.6);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid transparent;
@@ -104,7 +106,9 @@ a:hover { color: #ffb74d; }
 }
 .dot:hover { background: var(--tx2); }
 
-/* --- Progress Bar --- */
+/* ============================================
+   Progress Bar
+   ============================================ */
 .progress-bar {
   position: fixed;
   top: 56px; left: 0;
@@ -114,11 +118,14 @@ a:hover { color: #ffb74d; }
   z-index: 999;
 }
 
-/* --- Slides --- */
+/* ============================================
+   Slide Base
+   ============================================ */
 .slide {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
 }
@@ -127,7 +134,7 @@ a:hover { color: #ffb74d; }
   background: var(--bg-alt);
 }
 
-/* --- Slide with background image (hero, future) --- */
+/* Background image layer */
 .slide-bg {
   position: absolute;
   inset: 0;
@@ -139,13 +146,63 @@ a:hover { color: #ffb74d; }
 .slide-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(8,8,14,0.88) 0%, rgba(8,8,14,0.65) 100%);
+  background: linear-gradient(135deg, rgba(8,8,14,0.92) 0%, rgba(8,8,14,0.72) 100%);
 }
 .slide-overlay.dark {
-  background: linear-gradient(180deg, rgba(8,8,14,0.92) 0%, rgba(8,8,14,0.7) 40%, rgba(8,8,14,0.92) 100%);
+  background: linear-gradient(180deg, rgba(8,8,14,0.94) 0%, rgba(8,8,14,0.72) 40%, rgba(8,8,14,0.94) 100%);
 }
 
-/* --- Centered content (hero, future) --- */
+/* ============================================
+   Slide Body — Centered Presentation Layout
+   ============================================ */
+.slide-body {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 120px clamp(24px, 5vw, 64px) 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.slide-label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--orange);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.slide-body h2 {
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 32px;
+}
+
+.slide-body p {
+  color: var(--tx2);
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  max-width: 700px;
+}
+.slide-body p strong {
+  color: var(--tx);
+  font-weight: 700;
+}
+
+.text-orange { color: var(--orange); }
+
+/* ============================================
+   Hero
+   ============================================ */
 .slide-content {
   position: relative;
   width: 100%;
@@ -160,7 +217,6 @@ a:hover { color: #ffb74d; }
   align-items: center;
 }
 
-/* --- Hero specific --- */
 .hero-badge {
   font-size: 0.72rem;
   font-weight: 600;
@@ -177,17 +233,16 @@ a:hover { color: #ffb74d; }
 }
 .hero-title {
   font-family: var(--display);
-  font-size: clamp(3.5rem, 11vw, 8.5rem);
+  font-size: clamp(3.5rem, 12vw, 9rem);
   font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  line-height: 1.0;
+  letter-spacing: -0.05em;
   margin-bottom: 28px;
   opacity: 0;
   animation: fadeUp 0.8s 0.4s forwards;
 }
-.text-orange { color: var(--orange); }
 .hero-sub {
-  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
   color: var(--tx2);
   max-width: 600px;
   margin-bottom: 56px;
@@ -218,139 +273,119 @@ a:hover { color: #ffb74d; }
   50% { transform: translateY(6px); }
 }
 
-/* --- Split layout (text + visual) --- */
-.slide-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  min-height: 100vh;
-  align-items: center;
-  gap: 0;
-}
-.slide-split.reverse {
-  grid-template-columns: 1fr 1fr;
-  direction: rtl;
-}
-.slide-split.reverse > * {
-  direction: ltr;
-}
-
-.slide-visual {
-  padding: clamp(32px, 5vw, 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slide-img {
-  width: 100%;
-  height: auto;
-  max-height: 70vh;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
-}
-
-.img-caption {
-  margin-top: 12px;
-  font-size: 0.75rem;
-  color: var(--tx3);
-  text-align: center;
-  font-style: italic;
-}
-
-.slide-text {
-  padding: clamp(40px, 6vw, 100px);
-  padding-top: 100px;
-  padding-bottom: 60px;
-}
-
-.slide-label {
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--orange);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.slide-label.center { text-align: center; }
-
-.slide-text h2 {
-  font-family: var(--display);
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin-bottom: 24px;
-}
-
-.slide-text p {
-  color: var(--tx2);
-  font-size: clamp(1.08rem, 1.8vw, 1.28rem);
-  line-height: 1.75;
-  margin-bottom: 18px;
-  max-width: 560px;
-}
-.slide-text p strong { color: var(--tx); font-weight: 700; }
-
-/* --- Slide Quote --- */
+/* ============================================
+   Quote Blocks
+   ============================================ */
 .slide-quote {
-  margin-top: 24px;
-  padding: 20px 24px;
+  margin-top: 28px;
+  padding: 24px 32px;
   background: var(--bg-card);
   border-left: 3px solid var(--orange);
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 14px 14px 0;
+  max-width: 660px;
+  text-align: left;
 }
 .slide-quote blockquote {
   font-family: var(--display);
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.6;
   font-style: italic;
   color: var(--tx);
 }
 .slide-quote cite {
   display: block;
   margin-top: 10px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--tx3);
   font-style: normal;
 }
 
-/* --- Chart Visual Container --- */
+/* ============================================
+   Chart / Visual Accent
+   ============================================ */
+.slide-accent {
+  width: 100%;
+  max-width: 660px;
+  margin: 32px auto 0;
+}
+
 .chart-visual {
   width: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: clamp(20px, 3vw, 40px);
+  padding: clamp(20px, 3vw, 36px);
 }
 .chart-label {
   font-family: var(--display);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--tx);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  text-align: left;
 }
-.power-svg, .debt-svg, .halving-svg {
+.power-svg, .debt-svg, .halving-svg, .delinq-svg, .wtf-svg {
   width: 100%;
   height: auto;
 }
 
-/* --- Mini Timeline --- */
+/* ============================================
+   WTF 1971 Chart Grid
+   ============================================ */
+.wtf-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 880px;
+  margin-top: 28px;
+}
+.wtf-charts-grid .slide-accent {
+  max-width: 100%;
+  margin: 0;
+}
+
+.chart-source {
+  font-size: 0.68rem;
+  color: var(--tx3);
+  text-align: right;
+  margin-top: 10px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.wtf-attribution {
+  margin-top: 28px;
+  font-size: 0.82rem;
+  color: var(--tx3);
+  text-align: center;
+}
+.wtf-attribution a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.wtf-attribution a:hover {
+  color: #ffb74d;
+}
+
+/* ============================================
+   Mini Timeline
+   ============================================ */
 .mini-timeline {
-  margin: 20px 0;
+  margin: 24px 0;
+  max-width: 560px;
+  text-align: left;
 }
 .mt-item {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   align-items: baseline;
-  padding: 7px 0;
+  padding: 8px 0;
   border-left: 2px solid var(--border2);
-  padding-left: 16px;
+  padding-left: 18px;
   margin-left: 4px;
 }
 .mt-item.active {
@@ -364,7 +399,7 @@ a:hover { color: #ffb74d; }
   font-size: 0.72rem;
   color: var(--tx3);
   font-weight: 600;
-  min-width: 64px;
+  min-width: 68px;
   flex-shrink: 0;
 }
 .mt-item.active .mt-date { color: var(--red); }
@@ -375,34 +410,39 @@ a:hover { color: #ffb74d; }
 }
 .mt-item.highlight .mt-text { color: var(--tx); font-weight: 500; }
 
-/* --- Genesis Badge --- */
+/* ============================================
+   Genesis Badge
+   ============================================ */
 .genesis-badge {
-  margin-top: 24px;
+  margin-top: 28px;
   background: var(--orange-g);
   border: 1px solid rgba(247,147,26,0.2);
-  border-radius: 12px;
-  padding: 16px 20px;
+  border-radius: 14px;
+  padding: 20px 24px;
   text-align: center;
+  max-width: 600px;
 }
 .genesis-badge code {
   font-family: var(--mono);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--orange);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .genesis-badge span {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--tx3);
 }
 
-/* --- Blockchain Diagram --- */
+/* ============================================
+   Blockchain Diagram
+   ============================================ */
 .blockchain-diagram {
   width: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: clamp(20px, 3vw, 40px);
+  padding: clamp(20px, 3vw, 36px);
 }
 .chain-row {
   display: flex;
@@ -471,7 +511,9 @@ a:hover { color: #ffb74d; }
   color: var(--tx3);
 }
 
-/* --- Comparison Scorecard --- */
+/* ============================================
+   Comparison Scorecard
+   ============================================ */
 .comparison-chart { overflow-x: auto; }
 .scorecard { min-width: 360px; }
 .sc-header, .sc-row {
@@ -479,8 +521,9 @@ a:hover { color: #ffb74d; }
   grid-template-columns: 2fr 1fr 1fr 1fr;
   padding: 10px 16px;
   border-bottom: 1px solid var(--border);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   align-items: center;
+  text-align: left;
 }
 .sc-header {
   font-weight: 700;
@@ -505,19 +548,21 @@ a:hover { color: #ffb74d; }
 .grade.c { background: #ffa726; color: var(--bg); }
 .grade.f { background: var(--red); color: #fff; }
 
-/* --- Stock to Flow Mini --- */
+/* ============================================
+   Stock-to-Flow Mini
+   ============================================ */
 .stf-mini {
   display: flex;
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 24px;
+  justify-content: center;
 }
 .stf-item {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 20px;
+  border-radius: 12px;
+  padding: 16px 28px;
   text-align: center;
-  flex: 1;
 }
 .stf-item.hl {
   border-color: rgba(247,147,26,0.3);
@@ -532,25 +577,29 @@ a:hover { color: #ffb74d; }
 .stf-val {
   display: block;
   font-family: var(--display);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--orange);
 }
 
-/* --- Layer Compare --- */
+/* ============================================
+   Layer Compare
+   ============================================ */
 .layer-compare {
   display: flex;
   align-items: center;
   gap: 0;
-  margin: 16px 0;
+  margin: 20px 0;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
+  max-width: 560px;
 }
 .lc-item {
-  padding: 14px 18px;
+  padding: 16px 20px;
   flex: 1;
+  text-align: left;
 }
 .lc-item h4 {
   font-family: var(--display);
@@ -574,26 +623,28 @@ a:hover { color: #ffb74d; }
   flex-shrink: 0;
 }
 
-/* --- Stat Row --- */
+/* ============================================
+   Stat Row
+   ============================================ */
 .stat-row {
   display: flex;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 14px;
+  margin-top: 24px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .stat-box {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 18px;
+  border-radius: 12px;
+  padding: 18px 24px;
   text-align: center;
-  flex: 1;
-  min-width: 90px;
+  min-width: 120px;
 }
 .stat-box strong {
   display: block;
   font-family: var(--display);
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--orange);
   letter-spacing: -0.02em;
@@ -603,20 +654,47 @@ a:hover { color: #ffb74d; }
   color: var(--tx3);
 }
 
-/* --- Future Section --- */
+/* ============================================
+   Image Caption
+   ============================================ */
+.img-caption {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--tx3);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============================================
+   Centered Image
+   ============================================ */
+.slide-img-centered {
+  width: 100%;
+  max-width: 600px;
+  max-height: 50vh;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  margin: 0 auto;
+  display: block;
+}
+
+/* ============================================
+   Future Section
+   ============================================ */
 .future-title {
   font-family: var(--display);
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 44px;
+  letter-spacing: -0.035em;
+  margin-bottom: 48px;
 }
 .future-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   max-width: 900px;
-  margin-bottom: 48px;
+  margin-bottom: 52px;
   width: 100%;
 }
 .fg-card {
@@ -645,7 +723,7 @@ a:hover { color: #ffb74d; }
 }
 
 .final-quote {
-  max-width: 640px;
+  max-width: 660px;
   margin-top: 8px;
 }
 .final-quote blockquote {
@@ -663,7 +741,9 @@ a:hover { color: #ffb74d; }
   font-style: normal;
 }
 
-/* --- Resources --- */
+/* ============================================
+   Resources
+   ============================================ */
 .resources-slide {
   background: var(--bg) !important;
   min-height: auto;
@@ -671,7 +751,7 @@ a:hover { color: #ffb74d; }
 }
 .section-title {
   font-family: var(--display);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 14px;
@@ -715,7 +795,9 @@ a:hover { color: #ffb74d; }
   line-height: 1.55;
 }
 
-/* --- Footer --- */
+/* ============================================
+   Footer
+   ============================================ */
 .footer {
   background: var(--bg-alt);
   border-top: 1px solid var(--border);
@@ -749,7 +831,9 @@ a:hover { color: #ffb74d; }
   font-style: italic;
 }
 
-/* --- Fade-in Animations --- */
+/* ============================================
+   Fade Animations
+   ============================================ */
 .fade-in {
   opacity: 0;
   transform: translateY(28px);
@@ -761,7 +845,9 @@ a:hover { color: #ffb74d; }
   transform: translateY(0);
 }
 
-/* --- Scrollbar --- */
+/* ============================================
+   Scrollbar
+   ============================================ */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
@@ -770,73 +856,83 @@ a:hover { color: #ffb74d; }
 /* ============================================
    Responsive
    ============================================ */
-@media (max-width: 1024px) {
-  .slide-split,
-  .slide-split.reverse {
-    grid-template-columns: 1fr;
-    direction: ltr;
+@media (max-width: 768px) {
+  .slide-body {
+    padding: 100px clamp(20px, 5vw, 40px) 60px;
   }
-  .slide-split.reverse > * {
-    direction: ltr;
+
+  .slide-body h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
-  .slide-visual {
-    padding: 80px clamp(20px, 5vw, 48px) 0;
-  }
-  .slide-text {
-    padding: 40px clamp(20px, 5vw, 48px) 60px;
-    padding-top: 32px;
-  }
-  .slide-text p {
+
+  .slide-accent {
     max-width: 100%;
   }
-  .slide-img {
-    max-height: 45vh;
+
+  .chain-row {
+    justify-content: flex-start;
+  }
+
+  .layer-compare {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .lc-item.highlight {
+    border-left: none;
+    border-top: 2px solid var(--orange);
+  }
+
+  .future-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat-box {
+    width: 100%;
+  }
+
+  .stf-mini {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stf-item {
+    width: 100%;
+  }
+
+  .slide-img-centered {
+    max-width: 100%;
+    max-height: 40vh;
+  }
+
+  .slide-quote {
+    max-width: 100%;
+  }
+
+  .wtf-charts-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
   .nav-dots { gap: 5px; }
   .dot { width: 6px; height: 6px; }
-  
-  .chain-row {
-    justify-content: flex-start;
-  }
-  
+
   .sc-header, .sc-row {
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
     padding: 8px 10px;
     font-size: 0.7rem;
   }
-  
-  .layer-compare {
-    flex-direction: column;
-  }
-  .lc-item.highlight {
-    border-left: none;
-    border-top: 2px solid var(--orange);
-  }
-  
+
   .future-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
-  
-  .stat-row {
-    flex-direction: column;
-  }
-  
-  .stf-mini {
-    flex-direction: column;
-  }
-  
+
   .footer-inner {
     flex-direction: column;
     text-align: center;
-  }
-}
-
-@media (max-width: 420px) {
-  .future-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -852,7 +948,6 @@ a:hover { color: #ffb74d; }
   font-family: var(--sans);
 }
 
-/* --- Toggle Button --- */
 .chat-toggle {
   width: 60px;
   height: 60px;
@@ -896,7 +991,6 @@ a:hover { color: #ffb74d; }
   opacity: 0;
 }
 
-/* --- Chat Panel --- */
 .chat-panel {
   position: absolute;
   bottom: 0;
@@ -922,7 +1016,6 @@ a:hover { color: #ffb74d; }
   pointer-events: all;
 }
 
-/* --- Header --- */
 .chat-header {
   display: flex;
   align-items: center;
@@ -979,7 +1072,6 @@ a:hover { color: #ffb74d; }
   background: rgba(255,255,255,0.06);
 }
 
-/* --- Messages --- */
 .chat-messages {
   flex: 1;
   overflow-y: auto;
@@ -1002,7 +1094,6 @@ a:hover { color: #ffb74d; }
 .chat-msg.user {
   align-self: flex-end;
 }
-
 .chat-msg-bubble {
   padding: 12px 16px;
   border-radius: 16px;
@@ -1029,7 +1120,6 @@ a:hover { color: #ffb74d; }
   font-weight: 700;
 }
 
-/* --- Typing indicator --- */
 .chat-typing {
   display: flex;
   gap: 5px;
@@ -1050,7 +1140,6 @@ a:hover { color: #ffb74d; }
   30% { transform: translateY(-6px); opacity: 1; }
 }
 
-/* --- Input Area --- */
 .chat-input-area {
   padding: 12px 14px;
   border-top: 1px solid var(--border);
@@ -1105,7 +1194,6 @@ a:hover { color: #ffb74d; }
   cursor: not-allowed;
 }
 
-/* --- Chat Responsive --- */
 @media (max-width: 440px) {
   .chat-widget {
     bottom: 16px;
